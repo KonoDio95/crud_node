@@ -1,9 +1,12 @@
+// Importa várias funções do arquivo 'ClienteService.js'.
 import { buscarTodos as _buscarTodos, 
          buscarUm as _buscarUm, 
          inserir as _inserir, 
          alterar as _alterar, 
          excluir as _excluir } from '../services/ClienteService.js';
 
+
+// Lida com solicitações para '/clientes'. Retorna todos os registros na tabela 'clientes'.
 export async function buscarTodos(req, res) {
     const json = { error: '', result: [] };
 
@@ -20,6 +23,8 @@ export async function buscarTodos(req, res) {
     }
     res.json(json);
 }
+
+// Lida com solicitações para '/cliente/:Id_Cliente'. Retorna um registro na tabela 'clientes' com um 'Id_Cliente' específico.
 export async function buscarUm(req, res) {
     let json = { error: '', result: {} };
 
@@ -31,6 +36,8 @@ export async function buscarUm(req, res) {
     }
     res.json(json);
 }
+
+// Lida com solicitações para '/cliente'. Insere um novo registro na tabela 'clientes' e retorna os resultados para o 'Id_Cliente' do novo registro.
 export async function inserir(req, res) {
     let json = { error: '', result: {} };
 
@@ -64,6 +71,8 @@ export async function inserir(req, res) {
 
     res.json(json);
 }
+
+// Lida com solicitações para '/cliente/:Id_Cliente'. Atualiza um registro na tabela 'clientes' com um 'Id_Cliente' específico e retorna os resultados da consulta.
 export async function alterar(req, res) {
     let json = { error: '', result: {} };
 
@@ -97,6 +106,8 @@ export async function alterar(req, res) {
 
     res.json(json);
 }
+
+// Lida com solicitações para '/cliente/:Id_Cliente'. Exclui um registro na tabela 'clientes' com um 'Id_Cliente' específico e retorna os resultados da consulta.
 export async function excluir(req, res) {
     let json = { error: '', result: {} };
 
